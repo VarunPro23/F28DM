@@ -1,0 +1,13 @@
+image: "python:3.0"
+
+check_xml_well_formed:
+    stage: test
+    script: "xmllint --noout data.xml"
+
+validate_schema:
+    stage: test
+    script: "xmllint --schema schema.xsd data.xml"
+
+run_xpath_query:
+    stage: test
+    script: "python test.py"

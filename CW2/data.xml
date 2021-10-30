@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hires xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+  
+  <hire hireNo="1">
+    <!-- Vehicle reference -->
+    <vehicleID>V00348</vehicleID>
+    <!-- Customer reference -->
+    <customerID>C04141</customerID>
+
+    <!-- Hire date -->
+    <hireDate>
+      <startDate>2021-01-15</startDate>
+      <endDate>2021-01-23</endDate>
+    </hireDate>
+    <!-- Hire location -->
+    <hireLoc>
+      <startLoc>New York</startLoc>
+      <endLoc>Detroit</endLoc>
+    </hireLoc>
+
+    <!-- Hire price per day -->
+    <hirePrice>117</hirePrice>
+  </hire>
+
+  <hire hireNo="2">
+    <vehicleID>V09192</vehicleID>
+    <customerID>C49001</customerID>
+    <hireDate>
+      <startDate>2021-07-07</startDate>
+      <endDate>2021-07-21</endDate>
+    </hireDate>
+    <hireLoc>
+      <startLoc>Boston</startLoc>
+      <endLoc>Houston</endLoc>
+    </hireLoc>
+    <hirePrice>71</hirePrice>
+  </hire>
+
+  <hire hireNo="3">
+    <vehicleID>V78791</vehicleID>
+    <customerID>C49001</customerID>
+      <hireDate>
+        <startDate>2021-06-28</startDate>
+        <endDate>2021-07-04</endDate>
+      </hireDate>
+      <hireLoc>
+        <startLoc>Memphis</startLoc>
+        <endLoc>San Jose</endLoc>
+      </hireLoc>
+    <hirePrice>145</hirePrice>
+  </hire>
+
+  <hire hireNo="4">
+    <vehicleID>V55341</vehicleID>
+    <customerID>C04141</customerID>
+      <hireDate>
+        <startDate>2021-04-05</startDate>
+        <endDate>2021-04-16</endDate>
+      </hireDate>
+      <hireLoc>
+        <startLoc>Los Angeles</startLoc>
+        <endLoc>Virginia Beach</endLoc>
+      </hireLoc>
+    <hirePrice>38</hirePrice>
+  </hire>
+
+   <hire hireNo="5"> 
+     <vehicleID>V09199</vehicleID> 
+     <customerID>C67935</customerID>
+      <hireDate> 
+        <startDate>2021-02-05</startDate> 
+        <endDate>2021-03-20</endDate> 
+      </hireDate> 
+      <hireLoc> 
+        <startLoc>London</startLoc> 
+        <endLoc>Liverpool</endLoc> 
+      </hireLoc> 
+    <hirePrice>35</hirePrice> 
+  </hire> 
+
+  <hire hireNo="6"> 
+    <vehicleID>V09192</vehicleID>
+    <customerID>C44231</customerID>
+      <hireDate> 
+        <startDate>2021-01-01</startDate> 
+        <endDate>2021-03-25</endDate> 
+      </hireDate> 
+      <hireLoc> 
+        <startLoc>New York</startLoc> 
+        <endLoc>California</endLoc> 
+      </hireLoc> 
+    <hirePrice>75</hirePrice> 
+    </hire>
+
+  <hire hireNo="7"> 
+    <vehicleID>V09199</vehicleID>
+    <customerID>C54212</customerID>
+    <hireDate> 
+      <startDate>2021-01-01</startDate> 
+      <endDate>2021-01-05</endDate> 
+    </hireDate> 
+    <hireLoc> 
+      <startLoc>London</startLoc> 
+      <endLoc>Manchester</endLoc> 
+    </hireLoc> 
+    <hirePrice>100</hirePrice> 
+  </hire>
+
+  <hire hireNo="8">
+    <vehicleID>V09199</vehicleID> 
+    <customerID>C60012</customerID> 
+    <hireDate> 
+      <startDate>2021-02-08</startDate> 
+      <endDate>2021-02-12</endDate> 
+    </hireDate> 
+    <hireLoc> 
+      <startLoc>Sydney</startLoc> 
+      <endLoc>Melbourne</endLoc> 
+    </hireLoc>
+    <hirePrice>90</hirePrice>
+  </hire>
+
+  <hire hireNo="9">
+    <vehicleID>V55341</vehicleID> 
+    <customerID>C67935</customerID> 
+    <hireDate> 
+      <startDate>2021-03-01</startDate> 
+      <endDate>2021-03-12</endDate> 
+    </hireDate> 
+    <hireLoc> 
+      <startLoc>Liverpool</startLoc> 
+      <endLoc>Southampton</endLoc> 
+    </hireLoc>
+    <hirePrice>120</hirePrice>
+  </hire>
+
+  <hire hireNo="10">
+    <vehicleID>V00173</vehicleID>
+    <customerID>C04141</customerID> 
+    <hireDate> 
+      <startDate>2021-02-01</startDate> 
+      <endDate>2021-02-05</endDate> 
+    </hireDate> 
+    <hireLoc> 
+      <startLoc>New York</startLoc> 
+      <endLoc>Washington</endLoc> 
+    </hireLoc>
+    <hirePrice>300</hirePrice>
+  </hire>
+
+  <!-- ******************************************************************** -->
+  <!-- Vehicles -->
+  
+  <vehicle id="V00348">
+    <category>Luxury Car</category>
+    <transmission>Automatic</transmission>
+  </vehicle>
+
+  <vehicle id="V09192">
+    <category>Family Car</category>
+    <transmission>Automatic</transmission>
+  </vehicle>
+
+  <vehicle id="V78791">
+    <category>Sports Car</category>
+    <transmission>Automatic</transmission>
+  </vehicle>
+
+  <vehicle id ="V55341">
+      <category>Medium Car</category>
+      <transmission>Manual</transmission>
+    </vehicle>
+
+    <vehicle id = "V09199">   
+      <category>Family Car</category> 
+      <transmission>Automatic</transmission> 
+    </vehicle>
+    
+    <vehicle id = "V00173"> 
+      <category>Luxury Car</category> 
+      <transmission>Manual</transmission> 
+    </vehicle> 
+
+  <!-- ******************************************************************** -->
+  <!-- Customers -->
+
+  <customer id="C04141">
+    <name>Johnnie Holmwood</name>
+    <dob>1979-09-08</dob>
+    <address>126 Jadewood Farms, New Jersey</address>
+    <mobileNo>862-252-9680</mobileNo>
+    <homeNo>973-341-3917</homeNo>
+    <email>johnnie_h@gmail.com</email>
+
+    <!-- Driving license details -->
+    <drivLicense>
+      <licenseNo>1313819230</licenseNo>
+      <issueDate>2014-04-28</issueDate>
+      <expDate>2024-04-28</expDate>
+      <issuePlace>New York</issuePlace>
+    </drivLicense>
+  </customer>
+
+  <customer id="C49001">
+    <name>Nolan Miles</name>
+    <dob>2000-04-19</dob>
+    <address>4798 Venture Drive , Oakland</address>
+    <mobileNo>510-221-3539</mobileNo>
+    <homeNo>207-831-3224</homeNo>
+    <email>Nolanmiles@gmail.com</email>
+    <drivLicense>
+      <licenseNo>3098734502</licenseNo>
+      <issueDate>2019-03-16</issueDate>
+      <expDate>2029-03-16</expDate>
+      <issuePlace>Norfolk</issuePlace>
+    </drivLicense>
+  </customer>
+
+  <customer id="C67935">
+    <name>Kyle Shelton</name> 
+    <dob>1996-11-21</dob> 
+    <address> 58, Redcliffe Way, London</address> 
+    <mobileNo>070-346-5916</mobileNo> 
+    <homeNo>070-624-3981</homeNo> 
+    <email>Kyleshelton96@gmail.com</email> 
+    <drivLicense> 
+      <licenseNo>1145676599</licenseNo> 
+      <issueDate>2015-07-10</issueDate> 
+      <expDate>2025-07-10</expDate> 
+      <issuePlace>London</issuePlace> 
+    </drivLicense> 
+  </customer> 
+  
+  <customer id ="C44231">
+    <name>Nick Cino</name> 
+    <dob>1997-03-19</dob> 
+    <address>882, Swede Rd Panama , New York</address> 
+    <mobileNo>716-782-3494</mobileNo> 
+    <homeNo>197-499-1103</homeNo> 
+    <email>Nick_swedwe@gmail.com</email> 
+    <drivLicense> 
+      <licenseNo>6523895105</licenseNo> 
+      <issueDate>2021-05-01</issueDate> 
+      <expDate>2026-05-01</expDate> 
+      <issuePlace>New York</issuePlace> 
+    </drivLicense>
+  </customer>
+
+  <customer id = "C54212"> 
+    <name>Jeremy Brown</name> 
+    <dob>1980-01-23</dob> 
+    <address>75 King Street, London</address> 
+    <mobileNo>020-959-0024</mobileNo> 
+    <homeNo>020-936-0505</homeNo> 
+    <email>Jbrown@gmail.com</email> 
+    <drivLicense> 
+      <licenseNo>5837130911</licenseNo> 
+      <issueDate>2013-11-23</issueDate> 
+      <expDate>2023-11-23</expDate> 
+      <issuePlace>New York</issuePlace> 
+    </drivLicense> 
+  </customer>
+          
+  <customer id = "C60012"> 
+    <name>Otis Milburn</name> 
+    <dob>1990-12-23</dob> 
+    <address>161 Sussex St, Sydney</address> 
+    <mobileNo>040-222-8158</mobileNo> 
+    <homeNo>049-157-0110</homeNo> 
+    <email>otism23@hotmail.com</email> 
+    <drivLicense> 
+      <licenseNo>1839630666</licenseNo> 
+      <issueDate>2012-10-03</issueDate> 
+      <expDate>2022-10-02</expDate> 
+      <issuePlace>Canberra</issuePlace> 
+    </drivLicense> 
+  </customer>
+
+</hires>

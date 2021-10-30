@@ -1,0 +1,4 @@
+# Gets the IDs of all vehicles that were hired from or returned to Watt Motors' Liverpool branch
+# -Written by Gem
+
+//hire[.//startLoc='Liverpool' or .//endLoc='Liverpool']/vehicleID

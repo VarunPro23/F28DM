@@ -1,0 +1,4 @@
+# Gets the emails of customers that live in London
+# -Written by Gem
+
+//customer[contains(./address, 'London')]/email/text()

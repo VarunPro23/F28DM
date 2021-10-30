@@ -1,0 +1,3 @@
+#Varun Senthil
+#Query to return the hire details of the booking with hireNo as 7
+//hire[@hireNo="7"]

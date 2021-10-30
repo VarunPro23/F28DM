@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Vehicle ID data type -->
+  <xs:simpleType name="vehicleID">
+    <xs:restriction base="xs:string">
+      <!-- Matches "Vxxxxx", x = 0-9 -->
+      <xs:pattern value="V\d{5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Customer ID data type -->
+  <xs:simpleType name="customerID">
+    <xs:restriction base="xs:string">
+      <!-- Matches "Cxxxxx", x = 0-9 -->
+      <xs:pattern value="C\d{5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Phone number data type -->
+  <xs:simpleType name="phoneNo">
+    <xs:restriction base="xs:string">
+      <!-- Matches xxx-xxx-xxxx format -->
+      <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Email data type -->
+  <xs:simpleType name="email">
+    <xs:restriction base="xs:string">
+      <!-- Regex reference: http://emailregex.com -->
+      <xs:pattern value="[a-zA-Z0-9_.+\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="numbers">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:totalDigits value="10">
+        <!-- Matches xxxxxxxxxx format -->
+      </xs:totalDigits>
+      <xs:minInclusive value="1000000000">
+      </xs:minInclusive>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transmission">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Automatic"/>
+      <xs:enumeration value="Manual"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="category">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Small Car"/>
+      <xs:enumeration value="Medium Car"/>
+      <xs:enumeration value="Family Car"/>
+      <xs:enumeration value="MPV"/>
+      <xs:enumeration value="Sports Car"/>
+      <xs:enumeration value="Luxury Car"/>
+      <xs:enumeration value="Minivan"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+
+  <xs:element name="hires">
+    <xs:complexType>
+      <xs:sequence>
+        
+        <xs:element name="hire" maxOccurs="unbounded">                                   <!-- <hire hireNo="x"> -->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vehicleID" type="vehicleID"/>
+              <xs:element name="customerID" type="customerID"/>
+
+              <xs:element name="hireDate">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="startDate" type="xs:date"/>
+                    <xs:element name="endDate" type="xs:date"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              
+              <xs:element name="hireLoc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="startLoc" type="xs:string"/>
+                    <xs:element name="endLoc" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="hirePrice" type="xs:positiveInteger"/>
+            </xs:sequence>
+            <xs:attribute name="hireNo" type="xs:positiveInteger" use="required"/>       <!-- @hireNo -->
+          </xs:complexType>
+        </xs:element>                                                                    <!-- </hire> -->   
+        
+
+        <xs:element name="vehicle" maxOccurs="unbounded">                                <!-- <vehicle> -->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="category" type="category"/>
+              <xs:element name="transmission" type="transmission"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="vehicleID" use="required"/>                    <!-- @vehicleID -->
+          </xs:complexType>
+        </xs:element>                                                                    <!-- </vehicle> -->
+
+
+        <xs:element name="customer" maxOccurs="unbounded">                               <!-- <customer> -->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="dob" type="xs:date"/>
+              <xs:element name="address" type="xs:string"/>
+              <xs:element name="mobileNo" type="phoneNo" minOccurs="0"/>
+              <xs:element name="homeNo" type="phoneNo" minOccurs="0"/>
+              <xs:element name="officeNo" type="phoneNo" minOccurs="0"/>
+              <xs:element name="email" type="email" minOccurs="0"/>
+              
+              <xs:element name="drivLicense">                                            <!-- <drivLicense> -->
+                <xs:complexType>
+                  <xs:sequence>
+                   <xs:element name="licenseNo" type="numbers" />
+                   <xs:element name="issueDate" type="xs:date"/>
+                   <xs:element name="expDate" type="xs:date"/>
+                   <xs:element name="issuePlace" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>                                    
+              </xs:element>                                                              <!-- </drivLicense> -->
+            </xs:sequence>
+            <xs:attribute name="id" type="customerID" use="required"/>                   <!-- @customerID -->
+          </xs:complexType>
+        </xs:element>                                                                    <!-- </customer> -->
+        
+      </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- Keys and keyrefs -->
+    <xs:key name="vehicleID">
+      <xs:selector xpath="hires/vehicle"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <xs:key name="customerID">
+      <xs:selector xpath="hires/customer"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+
+    <xs:keyref name="vehicleIDRef" refer="vehicleID">
+      <xs:selector xpath="hires/hire"/>
+      <xs:field xpath="vehicleID"/>
+    </xs:keyref>
+
+    <xs:keyref name="customerIDRef" refer="customerID">
+      <xs:selector xpath="hires/hire"/>
+      <xs:field xpath="customerID"/>
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

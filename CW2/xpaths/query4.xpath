@@ -1,0 +1,3 @@
+# Varun Senthil
+# Query returns the count of all vehicles with transmission as manual
+count(//vehicle[transmission='Manual'])
